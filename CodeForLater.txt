@@ -1,0 +1,19 @@
+// This is for SkillsOverview in A Full Width Lin
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Container";
+
+const SkillsOverview = () => {
+  return (
+    <Box sx={{display: 'flex', justifyContent: 'space-between', borderTop: '3px solid black', borderBottom: '3px solid black', my: 2}}>
+        <Typography variant = "h6">REST API</Typography>
+        <Typography variant = "h6">SOFWARE DEVELOPMENT</Typography>
+        <Typography variant = "h6">E-COMMERCE</Typography>
+        <Typography variant = "h6">DATABASES</Typography>
+        <Typography variant = "h6">SOFTWARE DOCUMENTATION</Typography>
+        <Typography variant = "h6">TESTING</Typography>
+    </Box>
+  )
+}
+
+export default SkillsOverview
+

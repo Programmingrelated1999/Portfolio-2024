@@ -1,0 +1,17 @@
+.aboutme-link {
+    position: relative;
+    color: black; /* Adjust text color as needed */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .aboutme-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%; /* Covers the bottom half */
+    background-color: #ff6b6b; /* Use the desired background color */
+    z-index: -1; /* Place the background behind the text */
+  }
+  
