@@ -4,7 +4,17 @@
     text-decoration: none; /* Remove underline */
   }
   
-  .aboutme-link::after {
+.intro-text-color{
+  color: rgb(70, 70, 70);
+}
+
+.purple-text{
+  background-color: rgb(250, 165, 250);
+  border-radius: 0.3em;
+  color: white;
+}
+
+.aboutme-link::after {
     content: '';
     position: absolute;
     left: 0;
@@ -13,5 +23,5 @@
     height: 50%; /* Covers the bottom half */
     background-color: #ff6b6b; /* Use the desired background color */
     z-index: -1; /* Place the background behind the text */
-  }
+}
   

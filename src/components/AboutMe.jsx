@@ -1,30 +1,43 @@
-import { Typography } from '@mui/material'
 import Container from '@mui/material/Container'
-import SkillsOverview from './SkillsOverview'
 import './AboutMe.css'
+import { createTheme, ThemeProvider, Typography } from '@mui/material';
+
+// Create a custom theme with the Kalam font
+const theme = createTheme({
+  typography: {
+    h6: {
+      fontFamily: 'Kalam, cursive',
+      fontWeight: 400, // Bold
+    },
+    h4: {
+      fontFamily: 'Kalam, cursive',
+      fontWeight: 400, // Regular
+    },
+    h2: {
+      fontFamily: 'Kalam, cursive',
+      fontWeight: 800, // Regular
+    }
+  },
+});
 
 const AboutMe = () => {
   return (
-    <Container sx = {{marginTop: "4em"}}>
-        {/* <Typography variant = "h2" sx={{marginLeft: "0.5em", color: "#ff6b6b"}}>Hello. </Typography> */}
-        <Typography variant = "h3" sx={{color: "#ff6b6b"}} mx = {5}>Hello.</Typography> 
-        <Container sx = {{display: "flex", flexDirection: {xs: "column", md: "row"}, paddingTop: 1}}>
-          <Typography variant = "h5" sx={{maxWidth: {xs: "100%", md: "60%"}}} mx = {2}>My name is Kaung Htet Myat. I am a Software Engineer based in North Carolina, 
-            currently working for an e-commerce company. <br/>
-            
-            It has been 2 years since I started my career in software engineering but over 6 years since I started coding. I graduated from&nbsp;
-            <a className='aboutme-link' href='https://www.uccs.edu/' target='blank'>University of Colorado Colorado Springs</a> with a degree in Computer Science. I am passionate about 
-            writing codes to turn ideas into reality. I am organized, creative and an ambitious person who is always curious to learn new tools and innovate. 
-            You can find most of my work on my <a className='aboutme-link' href='https://github.com/Programmingrelated1999' target='blank'>Github</a> Page.
-
-            <br/><br/>
-            Outside of programming, I like to try new hobbies. I am currently learning to play tennis, watching soccer games, and travelling.  
-          </Typography>
-          <Container>
-            <SkillsOverview />
-          </Container>
-        </Container>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container m={3} sx = {{display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center"}}>
+        <Typography py = {1} variant = "h2" sx={{color: "#ff6b6b"}}>Hello.</Typography> 
+        <Typography py = {1} variant = "h4" sx = {{maxWidth: "70% "}}>I'm Kaung Htet Myat, a <span className='purple-text'>Software Engineer</span> based in North Carolina, currently working for an e-commerce company.</Typography>
+        <Typography className = "intro-text-color" p = {1} variant = "h6" sx = {{maxWidth: "70% "}}>
+        I have been coding for over 6 years and have worked as a software engineer for the past 2 years. I graduated from the&nbsp;  
+          <a className="aboutme-link" href="https://www.uccs.edu/" target="_blank">University of Colorado Colorado Springs</a> 
+          &nbsp;with a degree in Computer Science. I am passionate about turning ideas into reality through code and am always curious to learn new tools and innovate. You can find my work on my&nbsp;<a className="aboutme-link" href="https://github.com/Programmingrelated1999" target="_blank">GitHub</a>.
+        <br/>
+          <span className = 'hobby-text'>
+            <p>Outside of programming, I enjoy trying new hobbies, such as learning tennis, watching soccer, and traveling.</p>
+            <span className = "hobby-arrow"></span>
+          </span>
+      </Typography>
+      </Container>
+    </ThemeProvider>
   )
 }
 
